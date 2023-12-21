@@ -23,6 +23,7 @@ const Navigation = () => {
 		} else {
 			handleResetWidth();
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isMobile]);
 
 	useEffect(() => {
