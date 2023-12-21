@@ -30,14 +30,14 @@ const NavBar = () => {
 					<>
 						<SignInButton mode='modal'>
 							<Button
-								variant={'ghost'}
-								size={'sm'}
+								variant='ghost'
+								size='sm'
 							>
 								Log in
 							</Button>
 						</SignInButton>
 						<SignInButton mode='modal'>
-							<Button size={'sm'}>Get Mindkeep free</Button>
+							<Button size='sm'>Get Mindkeep free</Button>
 						</SignInButton>
 					</>
 				)}

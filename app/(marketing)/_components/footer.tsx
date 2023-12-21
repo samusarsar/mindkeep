@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+
 import Logo from './logo';
 
 const Footer = () => {
@@ -7,14 +8,14 @@ const Footer = () => {
 			<Logo />
 			<div className='md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-2 text-muted-foreground'>
 				<Button
-					variant={'ghost'}
-					size={'sm'}
+					variant='ghost'
+					size='sm'
 				>
 					Privacy Policy
 				</Button>
 				<Button
-					variant={'ghost'}
-					size={'sm'}
+					variant='ghost'
+					size='sm'
 				>
 					Terms & Conditions
 				</Button>

@@ -2,11 +2,11 @@
 
 import { useConvexAuth } from 'convex/react';
 import { ArrowRight } from 'lucide-react';
+import { SignInButton } from '@clerk/clerk-react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { Spinner } from '@/components/spinner';
-import { SignInButton } from '@clerk/clerk-react';
 
 const Heading = () => {
 	const { isAuthenticated, isLoading } = useConvexAuth();
