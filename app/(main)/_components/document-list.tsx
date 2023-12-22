@@ -22,7 +22,7 @@ const DocumentList = ({ parentDocumentId, level = 0 }: DocumentListProps) => {
 	const router = useRouter();
 	const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
-	const handleExpand = (documentId: string) => {
+	const onExpand = (documentId: string) => {
 		setExpanded((prevExpanded) => ({
 			...prevExpanded,
 			[documentId]: !prevExpanded[documentId],
@@ -33,7 +33,7 @@ const DocumentList = ({ parentDocumentId, level = 0 }: DocumentListProps) => {
 		parentDocument: parentDocumentId,
 	});
 
-	const handleRedirect = (documentId: string) => {
+	const onRedirect = (documentId: string) => {
 		router.push(`/documents/${documentId}`);
 	};
 
@@ -69,13 +69,13 @@ const DocumentList = ({ parentDocumentId, level = 0 }: DocumentListProps) => {
 				<div key={document._id}>
 					<Item
 						id={document._id}
-						onClick={() => handleRedirect(document._id)}
+						onClick={() => onRedirect(document._id)}
 						label={document.title}
 						icon={FileIcon}
 						documentIcon={document.icon}
 						active={params.documentId === document._id}
 						level={level}
-						onExpand={() => handleExpand(document._id)}
+						onExpand={() => onExpand(document._id)}
 						expanded={expanded[document._id]}
 					/>
 					{expanded[document._id] && (
