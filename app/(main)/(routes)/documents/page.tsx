@@ -13,7 +13,7 @@ const DocumentsPage = () => {
 	const { user } = useUser();
 	const create = useMutation(api.documents.create);
 
-	const handleCreate = () => {
+	const onCreate = () => {
 		const promise = create({
 			title: 'Untitled',
 		});
@@ -46,7 +46,7 @@ const DocumentsPage = () => {
 			<h2 className='text-lg font-medium'>
 				Welcome to {user?.firstName}&apos;s Mindkeep
 			</h2>
-			<Button onClick={handleCreate}>
+			<Button onClick={onCreate}>
 				<PlusCircle className='h-4 w-4 mr-2' /> Create a note
 			</Button>
 		</div>
