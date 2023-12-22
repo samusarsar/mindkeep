@@ -32,16 +32,16 @@ const Navigation = () => {
 
 	useEffect(() => {
 		if (isMobile) {
-			handleCollapse();
+			onCollapse();
 		} else {
-			handleResetWidth();
+			onResetWidth();
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isMobile]);
 
 	useEffect(() => {
 		if (isMobile) {
-			handleCollapse();
+			onCollapse();
 		}
 	}, [pathname, isMobile]);
 
@@ -80,7 +80,7 @@ const Navigation = () => {
 		document.removeEventListener('mouseup', handleMouseUp);
 	};
 
-	const handleResetWidth = () => {
+	const onResetWidth = () => {
 		if (sidebarRef.current && navbarRef.current) {
 			setIsCollapsed(false);
 			setIsResetting(true);
@@ -99,7 +99,7 @@ const Navigation = () => {
 		}
 	};
 
-	const handleCollapse = () => {
+	const onCollapse = () => {
 		if (sidebarRef.current && navbarRef.current) {
 			setIsCollapsed(true);
 			setIsResetting(true);
@@ -133,7 +133,7 @@ const Navigation = () => {
 				)}
 			>
 				<div
-					onClick={handleCollapse}
+					onClick={onCollapse}
 					role='button'
 					className={cn(
 						'h-6 w-6 text-muted-foreground rounded-sm hover:bg-neutral-300 dark:bg-neutral-600 absolute top-3 right-2 opacity-0 group-hover/sidebar:opacity-100 transition',
@@ -166,7 +166,7 @@ const Navigation = () => {
 				</div>
 				<div
 					onMouseDown={handleMouseDown}
-					onClick={handleResetWidth}
+					onClick={onResetWidth}
 					className='opacity-0 group-hover/sidebar:opacity-100 transition cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0'
 				></div>
 			</aside>
@@ -181,7 +181,7 @@ const Navigation = () => {
 				<nav className='bg-transparent px-3 py-2 w-full'>
 					{isCollapsed && (
 						<MenuIcon
-							onClick={handleResetWidth}
+							onClick={onResetWidth}
 							className='h-6 w-6 text-muted-foreground'
 							role='button'
 						/>
