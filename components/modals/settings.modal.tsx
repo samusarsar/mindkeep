@@ -26,7 +26,6 @@ export const SettingsModal = () => {
 					</div>
 					<ModeToggle />
 				</div>
-				between
 			</DialogContent>
 		</Dialog>
 	);
