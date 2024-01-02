@@ -23,6 +23,7 @@ import {
 	PopoverContent,
 } from '@/components/ui/popover';
 import { useSearch } from '@/hooks/use-search';
+import { useSettings } from '@/hooks/use-settings';
 
 import UserItem from './user-item';
 import Item from './item';
@@ -30,6 +31,7 @@ import DocumentList from './document-list';
 import TrashBox from './trash-box';
 
 const Navigation = () => {
+	const settings = useSettings();
 	const search = useSearch();
 	const pathname = usePathname();
 	const isMobile = useMediaQuery('(max-width: 768px)');
@@ -147,7 +149,7 @@ const Navigation = () => {
 					onClick={onCollapse}
 					role='button'
 					className={cn(
-						'h-6 w-6 text-muted-foreground rounded-sm hover:bg-neutral-300 dark:bg-neutral-600 absolute top-3 right-2 opacity-0 group-hover/sidebar:opacity-100 transition',
+						'h-6 w-6 text-muted-foreground rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 absolute top-3 right-2 opacity-0 group-hover/sidebar:opacity-100 transition',
 						isMobile && 'opacity-100'
 					)}
 				>
@@ -164,7 +166,7 @@ const Navigation = () => {
 					<Item
 						label='Settings'
 						icon={Settings}
-						onClick={() => {}}
+						onClick={settings.onOpen}
 					/>
 					<Item
 						onClick={handleCreate}
