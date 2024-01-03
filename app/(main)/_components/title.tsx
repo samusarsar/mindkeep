@@ -14,7 +14,8 @@ interface TitleProps {
 }
 
 const Title = ({ initialData }: TitleProps) => {
-	const inputRef = useRef();
+	const inputRef: React.MutableRefObject<HTMLInputElement | null> =
+		useRef(null);
 	const update = useMutation(api.documents.update);
 
 	const [title, setTitle] = useState(initialData.title || 'Untitled');
