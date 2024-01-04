@@ -36,6 +36,7 @@ interface ItemProps {
 	label: string;
 	onClick?: () => void;
 	icon: LucideIcon;
+	isMobile?: boolean;
 }
 
 const Item = ({
@@ -49,6 +50,7 @@ const Item = ({
 	level = 0,
 	onExpand,
 	expanded,
+	isMobile,
 }: ItemProps) => {
 	const { user } = useUser();
 	const router = useRouter();
@@ -122,7 +124,7 @@ const Item = ({
 				<Icon className='shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground' />
 			)}
 			<span className='truncate'>{label}</span>
-			{isSearch && (
+			{isSearch && !isMobile && (
 				<kbd className='ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 roounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100'>
 					<span className='text-xs'>⌘</span>K
 				</kbd>

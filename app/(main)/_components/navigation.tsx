@@ -166,6 +166,7 @@ const Navigation = () => {
 						label='Search'
 						icon={Search}
 						isSearch
+						isMobile={isMobile}
 						onClick={search.onOpen}
 					/>
 					<Item
